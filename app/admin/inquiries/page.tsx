@@ -314,7 +314,7 @@ export default function AdminInquiriesPage() {
                         <span>{inq.phone}</span>
                       </div>
                       <button
-                        onClick={() => copyToClipboard(inq.phone, `phone-${inqId}`)}
+                        onClick={() => copyToClipboard(inq.phone || '', `phone-${inqId}`)}
                         className="text-slate-500 hover:text-white p-1 ml-1"
                         title="Copy Phone"
                       >
