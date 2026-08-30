@@ -17,8 +17,8 @@ export default function HeroSection() {
       <div className="ambient-glow w-[450px] h-[450px] bg-indigo-600/15 bottom-10 -left-20" />
 
       {/* Grid Pattern Overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
           backgroundSize: '48px 48px'
@@ -27,7 +27,7 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
-          
+
           {/* Top Pill Announcement */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] backdrop-blur-xl border border-cyan-500/30 shadow-[0_0_20px_rgba(0,240,255,0.15)] animate-fade-in">
             <span className="flex h-2 w-2 relative">
@@ -88,7 +88,7 @@ export default function HeroSection() {
 
           {/* Hero Reel Video Spotlight Card */}
           <div className="w-full pt-8 relative">
-            <div 
+            <div
               onClick={() => setShowreelOpen(true)}
               className="group cursor-pointer relative mx-auto max-w-4xl aspect-[21/9] sm:aspect-[2.35/1] rounded-3xl overflow-hidden glass-panel border border-cyan-500/30 shadow-[0_20px_70px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_80px_rgba(0,240,255,0.3)] transition-all duration-500 transform hover:-translate-y-1"
             >
@@ -146,7 +146,7 @@ export default function HeroSection() {
               <p className="text-xs text-slate-400 font-medium">Client Success</p>
             </div>
             <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm space-y-1 text-center">
-              <p className="text-2xl sm:text-3xl font-extrabold text-white font-mono">4+ Cannes/Lions</p>
+              <p className="text-2xl sm:text-2xl font-extrabold text-white font-mono">4+ Cannes/Lions</p>
               <p className="text-xs text-slate-400 font-medium">Industry Honors</p>
             </div>
           </div>
