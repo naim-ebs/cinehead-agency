@@ -72,29 +72,34 @@ if (!global.inMemoryStore) {
 }
 
 export async function connectDB(): Promise<boolean> {
-  if (!MONGODB_URI) {
+  const uri = process.env.MONGODB_URI || MONGODB_URI;
+  if (!uri) {
+    console.warn('[MongoDB] MONGODB_URI environment variable is missing in this runtime environment!');
     return false;
   }
 
-  if (cached.conn) {
+  if (cached.conn && mongoose.connection.readyState === 1) {
     return true;
   }
 
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
-      serverSelectionTimeoutMS: 2500, // Quick fallback if offline
+      serverSelectionTimeoutMS: 10000, // 10s timeout for Serverless cold-start TLS & DNS handshake
+      maxPoolSize: 10,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((m) => m);
+    cached.promise = mongoose.connect(uri, opts).then((m) => m);
   }
 
   try {
     cached.conn = await cached.promise;
     await seedDatabaseIfEmpty();
     return true;
-  } catch {
+  } catch (err) {
+    console.error('[MongoDB Atlas Connection Error]:', err);
     cached.promise = null;
+    cached.conn = null;
     return false;
   }
 }
