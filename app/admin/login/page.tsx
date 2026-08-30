@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('admin@cinehead.com');
+  const [email, setEmail] = useState('admin@cinehead.studio');
   const [password, setPassword] = useState('cinehead2026!admin');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -86,7 +86,7 @@ export default function AdminLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.1] text-white text-sm placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                  placeholder="admin@cinehead.com"
+                  placeholder="admin@cinehead.studio"
                 />
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function AdminLoginPage() {
               <span>Default Seed Credentials:</span>
             </p>
             <p className="font-mono text-[11px] text-slate-300">
-              Email: <span className="text-white font-semibold">admin@cinehead.com</span>
+              Email: <span className="text-white font-semibold">admin@cinehead.studio</span>
             </p>
             <p className="font-mono text-[11px] text-slate-300">
               Pass: <span className="text-white font-semibold">cinehead2026!admin</span>

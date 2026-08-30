@@ -43,7 +43,7 @@ export async function getAdminSession(): Promise<AdminSession | null> {
 }
 
 export async function authenticateAdmin(email: string, password: string): Promise<{ success: boolean; session?: AdminSession; error?: string }> {
-  const defaultAdminEmail = (process.env.ADMIN_EMAIL || 'admin@cinehead.com').toLowerCase();
+  const defaultAdminEmail = (process.env.ADMIN_EMAIL || 'admin@cinehead.studio').toLowerCase();
   const defaultAdminPassword = process.env.ADMIN_PASSWORD || 'cinehead2026!admin';
 
   // Direct fast-path for default seed admin

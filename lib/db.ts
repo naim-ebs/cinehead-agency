@@ -6,16 +6,16 @@ import Service from '@/models/Service';
 import SiteSettings from '@/models/SiteSettings';
 import User from '@/models/User';
 import bcrypt from 'bcryptjs';
-import { 
-  INITIAL_PROJECTS, 
-  INITIAL_TEAM, 
-  INITIAL_SERVICES, 
+import {
+  INITIAL_PROJECTS,
+  INITIAL_TEAM,
+  INITIAL_SERVICES,
   DEFAULT_SITE_SETTINGS,
-  ProjectType, 
-  TeamMemberType, 
-  ServiceType, 
+  ProjectType,
+  TeamMemberType,
+  ServiceType,
   InquiryType,
-  SiteSettingsType 
+  SiteSettingsType
 } from './seedData';
 
 const MONGODB_URI = process.env.MONGODB_URI || '';
@@ -126,7 +126,7 @@ async function seedDatabaseIfEmpty() {
       await SiteSettings.create(DEFAULT_SITE_SETTINGS);
     }
 
-    const defaultEmail = process.env.ADMIN_EMAIL || 'admin@cinehead.com';
+    const defaultEmail = process.env.ADMIN_EMAIL || 'admin@cinehead.studio';
     const existingAdmin = await User.findOne({ email: defaultEmail });
     if (!existingAdmin) {
       const defaultPass = process.env.ADMIN_PASSWORD || 'cinehead2026!admin';
