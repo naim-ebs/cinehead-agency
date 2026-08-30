@@ -132,7 +132,7 @@ export default function AdminLoginPage() {
           </form>
 
           {/* Seed Credentials Quick Hint */}
-          <div className="p-3.5 rounded-2xl bg-blue-950/40 border border-blue-800/30 text-xs text-slate-400 space-y-1">
+          {/* <div className="p-3.5 rounded-2xl bg-blue-950/40 border border-blue-800/30 text-xs text-slate-400 space-y-1">
             <p className="font-semibold text-cyan-300 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Default Seed Credentials:</span>
@@ -143,7 +143,7 @@ export default function AdminLoginPage() {
             <p className="font-mono text-[11px] text-slate-300">
               Pass: <span className="text-white font-semibold">cinehead2026!admin</span>
             </p>
-          </div>
+          </div> */}
         </div>
 
         <div className="text-center">
