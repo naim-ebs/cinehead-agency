@@ -55,6 +55,18 @@ export interface TeamMemberType {
   order: number;
 }
 
+export interface EstimatorServiceItem {
+  id: string;
+  label: string;
+  base: number;
+}
+
+export interface EstimatorTimelineItem {
+  id: string;
+  label: string;
+  mult: number;
+}
+
 export interface SiteSettingsType {
   id?: string;
   _id?: string;
@@ -71,6 +83,8 @@ export interface SiteSettingsType {
   currencyCode: string;
   contactHeading?: string;
   contactSubheading?: string;
+  estimatorServices?: EstimatorServiceItem[];
+  estimatorTimelines?: EstimatorTimelineItem[];
   contactEmail: string;
   contactPhone: string;
   contactAddress: string;
